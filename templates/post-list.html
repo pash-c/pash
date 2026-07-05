@@ -1,0 +1,17 @@
+---
+title: Writing
+---
+<a id="logo" href="./index.html">←</a>
+
+<h2>Writing</h2>
+
+<div class="post-list">
+  $for(posts)$
+    <article class="post-row">
+      <time datetime="$date$">$date$</time>
+      <a class="post-title" href="$url$">$title$</a>
+ 
+    </article>
+  $endfor$
+</div>  
+</section>
