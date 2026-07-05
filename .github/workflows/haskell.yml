@@ -17,11 +17,11 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v6
         with:
-          node-version: '20'
+          node-version: '24'
 
       - name: Install KaTeX CLI
         run: npm install -g katex
@@ -38,7 +38,9 @@ jobs:
             ~/.cabal/packages
             ~/.cabal/store
             dist-newstyle
-          key: ${{ runner.os }}-cabal-${{ hashFiles('**/*.cabal') }}
+          key: ${{ runner.os }}-cabal-${{ hashFiles('**/*.cabal', 'cabal.project.local') }}
+          restore-keys: |
+            ${{ runner.os }}-cabal-
 
       - name: Build site generator
         run: cabal build
@@ -46,7 +48,7 @@ jobs:
       - name: Generate site
         run: cabal run site -- build
 
-      - uses: actions/upload-pages-artifact@v3
+      - uses: actions/upload-pages-artifact@v4
         with:
           path: _site
 
