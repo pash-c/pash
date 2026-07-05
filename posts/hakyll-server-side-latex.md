@@ -1,5 +1,5 @@
 ---
-title: Server-side LaTeX Rendering (and sidenotes) with Hakyll
+title: Server-side LaTeX Rendering (and Sidenotes) with Hakyll
 date: 2026-07-02
 tags: [tag1, tag2]
 ---

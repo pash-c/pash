@@ -42,6 +42,7 @@ article{
 #vizzes {
   display: block;
   height: auto;
+  cursor: pointer;
 }
 
 
